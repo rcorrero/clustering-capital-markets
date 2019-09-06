@@ -12,7 +12,7 @@ In this project we use returns, price, and volume data from a universe of equiti
 The data required for this project is available through other sources, and if you need help obtaining data then feel free to contact Richard Correro.
 
 # thermidor
-While developing this standard framework for data science projects we've created and utilized several functions and classes to streamline and simplify the process of pipeline construction. We've created a python module named [thermidor](https://github.com/rcorrero/thermidor) where these objects may be found. 
+This project depends on [thermidor](https://github.com/rcorrero/thermidor). thermidor is a Python module containing several functions and classes which simplify the creation of machine learning projects by streamlining Sci-kit Learn pipeline construction.
 
 ------------
 # Organization
