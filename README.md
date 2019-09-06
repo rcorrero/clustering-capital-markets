@@ -42,4 +42,6 @@ While developing this standard framework for data science projects we've created
 - Pandas
 - NumPy
 - SciPy
-- thermidor
+- [thermidor](https://github.com/rcorrero/thermidor)
+------------
+Created by Richard Correro in 2019. Contact me at rcorrero at stanford dot edu
