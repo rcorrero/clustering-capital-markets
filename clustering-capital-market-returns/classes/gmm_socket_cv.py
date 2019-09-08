@@ -2,7 +2,7 @@ from thermidor import EstimatorSocketCV
 
 
 class GMMSocketCV(EstimatorSocketCV):
-     '''Class which fits an estimator with  an unknown parameter
+    '''Class which fits an estimator with  an unknown parameter
     using a Sci-kit Learn cross-validator.
     
     Takes a distribution function as a parameter. 
@@ -16,7 +16,7 @@ class GMMSocketCV(EstimatorSocketCV):
     
     Parameters
     -----------
-    estimator : Sci-kit Learn estimator object
+    estimator : Sci-kit Learn estimator class
         Estimator to be fit using cross-validation.
         
     param_name: str
@@ -47,10 +47,19 @@ class GMMSocketCV(EstimatorSocketCV):
         ``None`` means 1 unless in a :obj:`joblib.parallel_backend` context.
         ``-1`` means using all processors. See :term:`Glossary <n_jobs>`
         for more details.
-        
-    random_state : int, RandomState instance or None, optional, default=None
+
+    cv_random_state : int, RandomState instance or None, optional, default=None
         Pseudo random number generator state used for random uniform sampling
         from lists of possible values instead of scipy.stats distributions.
+        This values is passed to `cross_val`.
+        If int, random_state is the seed used by the random number generator;
+        If RandomState instance, random_state is the random number generator;
+        If None, the random number generator is the RandomState instance used
+        by `np.random`.
+
+    estimator_random_state : int, RandomState instance or None, optional, 
+                             default=None
+        This value is passed to `estimator`.
         If int, random_state is the seed used by the random number generator;
         If RandomState instance, random_state is the random number generator;
         If None, the random number generator is the RandomState instance used
@@ -68,12 +77,12 @@ class GMMSocketCV(EstimatorSocketCV):
         self.dist = {
             self.param_name : self.dist_func(X)
         }
-        
+
         # Create cross-validator object
-        self.model_selector = self.cross_val(self.estimator, self.dist,
-                                             cv=self.cv, n_jobs=self.n_jobs,
-                                             random_state=self.random_state,
-                                             verbose=self.verbose)
+        self.model_selector = self.cross_val(self.estimator(
+            random_state=self.estimator_random_state), 
+            self.dist, cv=self.cv, n_jobs=self.n_jobs,
+            random_state=self.cv_random_state, verbose=self.verbose)
         
         self.model_selector.fit(X, y, **kwargs)
         
