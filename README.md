@@ -32,8 +32,9 @@ This project depends on [thermidor](https://github.com/rcorrero/thermidor). ther
 │       ├── labeled_data_joiner.py
 │       ├── pca_dist.py
 │       └── transform_returns.py
-└── notebooks
-    └── 0.7.3-returns-pipeline-analysis.ipynb
+├── notebooks
+│   └── 0.7.3-returns-pipeline-analysis.ipynb
+└── setup.py
     
 ``` 
 ------------
