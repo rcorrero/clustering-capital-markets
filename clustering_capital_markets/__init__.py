@@ -1,5 +1,5 @@
 '''
-clustering-capital-market-returns
+clustering_capital_markets
 =================================
 This is a Python module containing the source code for the project of the same name.
 

@@ -1,4 +1,4 @@
-clustering-capital-market-returns &mdash; Richard Correro
+clustering_capital_markets &mdash; Richard Correro
 ==============================
 This is a machine learning project created using [Sci-kit Learn](https://github.com/scikit-learn/scikit-learn) and [thermidor](https://github.com/rcorrero/thermidor).
 
