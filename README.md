@@ -20,7 +20,7 @@ This project depends on [thermidor](https://github.com/rcorrero/thermidor). ther
 .
 ├── LICENSE
 ├── README.md
-├── clustering-capital-market-returns
+├── clustering_capital_markets
 │   ├── __init__.py
 │   ├── classes
 │   │   ├── __init__.py
